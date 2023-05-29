@@ -2,7 +2,7 @@
  * @Author: rx-ted
  * @Date: 2023-05-28 17:28:31
  * @LastEditors: rx-ted
- * @LastEditTime: 2023-05-28 22:25:03
+ * @LastEditTime: 2023-05-29 10:22:38
  */
 import {
   Configuration,
@@ -17,7 +17,10 @@ import {config} from "./config.js";
 const configuration = new Configuration({
   apiKey: config.openai_api_key,
   basePath: config.api,
+  
 });
+console.log(config.openai_api_key,config.api);
+
 const openai = new OpenAIApi(configuration);
 
 /**

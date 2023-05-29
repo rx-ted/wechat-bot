@@ -35,6 +35,11 @@ async function onMessage(msg: Message) {
   if (msg.self()) {
     return;
   }
+  if (msg.text().startsWith("/ping")) {
+    await msg.say("pong");
+    return;
+  }
+  /* 添加命令 */
   try {
 
     await Bot.onMessage(msg);
