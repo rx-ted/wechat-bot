@@ -9,6 +9,8 @@ import qrcodeTerminal from "qrcode-terminal";
 import { ChatBot } from "./bot.js";
 const Bot = new ChatBot();
 import { Message } from "wechaty";
+import {config} from "./config.js";
+
 // import config from "./config.js";
 // import ChatGPT from "./chatgpt.js";
 
@@ -17,8 +19,11 @@ const startTime = new Date();
 let chatGPTClient: any = null;
 // chatGPTClient = new ChatGPT();
 bot = WechatyBuilder.build({
-  name: "WechatEveryDay", // generate xxxx.memory-card.json and save login data for the next login
-  puppet: "wechaty-puppet-wechat", // 如果有token，记得更换对应的puppet
+  name: config.wechaty_name, // generate xxxx.memory-card.json and save login data for the next login
+  // puppet: "wechaty-puppet-wechat", // 如果有token，记得更换对应的puppet
+  // puppet:"wechaty-puppet-wechat4u",
+  puppet: config.wechaty_puppet,
+  // puppet:"wechaty-puppet-wechat4u"
   puppetOptions: {
     uos: true,
   },
