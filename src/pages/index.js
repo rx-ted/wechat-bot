@@ -40,7 +40,7 @@ async function submit(key) {
     })
     if (!subscription.ok) {
       const data = await subscription.json()
-      // console.log(data);
+      console.log(data);
       return data
       // throw new Error('API request failed')
     } else {
@@ -133,7 +133,7 @@ export default function Home() {
         .then(response => {
           const t2 = performance.now();
           const testLatency = t2 - t1;
-          // console.log(testLatency);
+          console.log(testLatency);
           totalLatency += testLatency;
 
           if (i === numTests - 1) {
