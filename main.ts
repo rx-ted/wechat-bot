@@ -11,6 +11,9 @@ const OPENAI_API_HOST = "api.openai.com";
 
 const INDEX_URL = Deno.env.get("INDEX_URL")||"https://raw.githubusercontent.com/rx-ted/wechat-bot/main/index.html"
 
+console.log(Deno.env.get('OPENAI_API_KEY'));
+
+
 let index = '';
 
 serve(async (request) => {
