@@ -2003,6 +2003,7 @@
             customDarkTime = JSON.parse(localCustomDark || '["21:00", "07:00"]');
             setDarkMode();
         }
+        console.log(Deno.env.get(OPENAI_API_KEY));
         checkDark();
     </script>
 </head>
@@ -2681,7 +2682,7 @@
                         <div class="setContent" style="margin-top: 83px;">
                             <div class="setTitle" data-i18n-key="aiKey"></div>
                             <div class="setDetail inputDetail apiDetail">
-                                <input class="inputTextClass" type="text" placeholder="sk-xxxxxx" id="keyInput"
+                                <input class="inputTextClass" type="text" placeholder=`{Deno.env.get(OPENAI_API_KEY)}` id="keyInput"
                                     autocomplete="off" style="-webkit-text-security: disc;" />
                                 <div id="checkBillBtn" class="loaded">
                                     <span data-i18n-key="checkBill"></span>
